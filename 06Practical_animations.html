@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script language="javascript" type="text/javascript">
+			var arr = ['0.png', '1.png', '2.png', '3.png'];
+			var ref;
+			var i = 1;
+			var index = 0;
+
+			function picLibrary() {
+				i > 2 ? i = 0 : i++;
+				console.log(i)
+				document.images['img1'].src = arr[i];				
+			}
+
+			function Start() {
+				setInterval(picLibrary, 1000);
+			}
+
+			function Stop() {
+				clearInterval(ref);
+			}
+
+			//function start to change the image every 1000 ms
+		</script>
+	</head>
+	<body onload="Start()">
+		<img name="img1" onmouseover="Stop()" onmouseout="Start()" alt="" />
+	</body>
+</html>
